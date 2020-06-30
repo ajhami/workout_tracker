@@ -11,6 +11,7 @@ This project is designed to help implement a full backend using MongoDB and Node
 ## Table of Contents
 - Installation
 - Usage
+- Note to user
 
 ### Installation
 
@@ -27,6 +28,9 @@ npm run seed
 
 ### Usage
 Upon startup, a summary of the most recent workout will appear (if applicable). The user can then update the workout or add a new one. After filling out new information, they can add more workout and view exercise history.
+
+### Note to User
+This application was deployed on June 29th and has no seed data uploaded to the heroku application. I will continue to add entries over the course of the next week to stretch out workout entries, thus demonstrating the detail of the [stats page](http://murmuring-cove-62119.herokuapp.com/stats).
 
 
 *© 2020 ajhami - Alexander James Hamilton. All Rights Reserved.*
