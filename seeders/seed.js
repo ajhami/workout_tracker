@@ -6,9 +6,11 @@ mongoose.connect("mongodb://localhost/workoutdb", {
   useFindAndModify: false
 });
 
+// new Date().setDate(new Date().getDate()-10),
+
 let workoutSeed = [
   {
-    day: new Date().setDate(new Date().getDate()-10),
+    day: new Date("2020-06-19T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -21,7 +23,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-9),
+    day: new Date("2020-06-20T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -34,7 +36,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-8),
+    day: new Date("2020-06-21T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -47,7 +49,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-7),
+    day: new Date("2020-06-22T23:56:54.772Z"),
     exercises: [
       {
         type: "cardio",
@@ -58,7 +60,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-6),
+    day: new Date("2020-06-23T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -71,7 +73,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-5),
+    day: new Date("2020-06-24T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -84,7 +86,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-4),
+    day: new Date("2020-06-25T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -97,7 +99,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-3),
+    day: new Date("2020-06-26T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -110,7 +112,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-2),
+    day: new Date("2020-06-27T23:56:54.772Z"),
     exercises: [
       {
         type: "resistance",
@@ -123,7 +125,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-1),
+    day: new Date("2020-06-28T23:56:54.772Z"),
     exercises: [
       {
         type: "cardio",
