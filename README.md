@@ -3,6 +3,8 @@
 ![Project Status](https://img.shields.io/badge/status-ready-green)
 ![License](https://img.shields.io/badge/License-wtfpl-blue)
 
+### [Click here](http://murmuring-cove-62119.herokuapp.com/) to view deployed application.
+
 ## Description
 This project is designed to help implement a full backend using MongoDB and Node.js. The frontend design navigates users to save workout information from each day then view a summary of their exercise.
 
