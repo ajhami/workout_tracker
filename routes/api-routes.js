@@ -1,12 +1,9 @@
 const router = require("express").Router();
 const db = require("./../models");
-// const mongojs = require("mongojs");
-
-// ADD API ROUTES HERE
 
 
+// Get route to all saved workouts
 router.get("/api/workouts", (req, res) => {
-    console.log("/api/workouts found!");
     db.Workout.find({})
         .then(dbWorkouts => {
             res.json(dbWorkouts);
@@ -16,13 +13,9 @@ router.get("/api/workouts", (req, res) => {
         });
 });
 
+// Post route creating a new workout instance
 router.post("/api/workouts", (req, res) => {
-    console.log("creating new workout");
-
-    db.Workout.create({
-        // day: Date.now(),
-        // exercises: []
-    })
+    db.Workout.create({})
         .then(newWorkout => {
             res.json(newWorkout);
         })
@@ -31,6 +24,7 @@ router.post("/api/workouts", (req, res) => {
         });
 });
 
+// Put route to update new or current workouts with exercise info
 router.put("/api/workouts/:id", (req, res) => {
     console.log("PUT ROUTE REACHED!");
     console.log(req.params.id);
@@ -52,13 +46,6 @@ router.put("/api/workouts/:id", (req, res) => {
                         sets: req.body.sets
                     }
                 ]
-
-                // "exercises.$type": req.body.type,
-                // "exercises.$name": req.body.name,
-                // "exercises.$duration": req.body.duration,
-                // "exercises.$weight": req.body.weight,
-                // "exercises.$reps": req.body.reps,
-                // "exercises.$sets": req.body.sets
             }
         })
             .then(function (addedWorkout) {
@@ -74,11 +61,15 @@ router.put("/api/workouts/:id", (req, res) => {
             "_id": req.params.id
         },
         {
-            "$set": {
-                "exercises.$type": req.body.type,
-                "exercises.$name": req.body.name,
-                "exercises.$duration": req.body.duration,
-                "exercises.$distance": req.body.distance
+            $set: {
+                exercises: [
+                    {
+                        type: req.body.type,
+                        name: req.body.name,
+                        duration: req.body.duration,
+                        distance: req.body.distance
+                    }
+                ]
             }
         })
             .then(function (addedWorkout) {
@@ -91,10 +82,12 @@ router.put("/api/workouts/:id", (req, res) => {
     }
 });
 
+// Get route to grab weekly data for stats page
 router.get("/api/workouts/range", (req, res) => {
-    console.log("/api/workouts/range found!");
+    // Setting the range dates upon API call (1 week span)
     var preDate = new Date().setDate(new Date().getDate()-7);
     var currDate = new Date().setDate(new Date().getDate());
+
     db.Workout.find({
         "day": {
             "$gte": preDate,
